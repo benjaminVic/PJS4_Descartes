@@ -1,0 +1,12 @@
+insert into Salle (numSalle) values ('B2-20');
+insert into Salle (numSalle) values ('B2-13');
+insert into Salle (numSalle) values ('B2-14');
+insert into Salle (numSalle) values ('B2-15');
+insert into Salle (numSalle) values ('B2-16');
+insert into Salle (numSalle) values ('B2-17');
+insert into Salle (numSalle) values ('B1-16');
+insert into Salle (numSalle) values ('B1-17');
+insert into Salle (numSalle) values ('B1-11');
+insert into Salle (numSalle) values ('B1-12');
+insert into Salle (numSalle) values ('B1-13');
+insert into Salle (numSalle) values ('B1-4');

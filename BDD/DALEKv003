@@ -1,0 +1,113 @@
+DROP TABLE Etudiant CASCADE CONSTRAINT purge;
+DROP TABLE Groupe CASCADE CONSTRAINT purge;
+DROP TABLE Suit CASCADE CONSTRAINT purge;
+DROP TABLE Cours CASCADE CONSTRAINT purge;
+DROP TABLE Salle CASCADE CONSTRAINT purge;
+DROP TABLE Modules CASCADE CONSTRAINT purge;
+DROP TABLE Professeur CASCADE CONSTRAINT purge;
+DROP TABLE Enseigne CASCADE CONSTRAINT purge;
+DROP TABLE ChargeDe CASCADE CONSTRAINT purge;
+DROP TABLE Projet CASCADE CONSTRAINT purge;
+
+CREATE TABLE Salle(
+	idSalle integer not null AUTO_INCREMENT,
+	numSalle varchar(5),
+	nbGroupePossibles integer not null,
+	PRIMARY KEY (idSalle)
+);
+
+CREATE TABLE Modules(
+	idModule integer not null AUTO_INCREMENT,
+	nomModule VARCHAR(10) not null,
+	couleur integer,
+	PRIMARY KEY (idModule)
+);
+
+CREATE TABLE Groupe(
+	idGroupe integer not null AUTO_INCREMENT,
+	numGroupe integer not null,
+	primary key (idGroupe)
+);
+
+CREATE TABLE Etudiant(
+	idEtu integer not null AUTO_INCREMENT,
+	password VARCHAR(40) not null,
+	nom VARCHAR(30) not null,
+	prenom VARCHAR(30) not null,
+	mail VARCHAR(40) not null,
+	sexe CHAR,
+	fk_numgroupe integer,
+	PRIMARY KEY (idEtu)
+);
+
+CREATE TABLE Cours(
+	idCours integer not null AUTO_INCREMENT,
+	duree integer not null,
+	fk_idModule integer,
+	fk_idSalle integer,
+	PRIMARY KEY (idCours)
+);
+
+CREATE TABLE Suit(
+	idSuit integer not null AUTO_INCREMENT,
+	fk_idCours integer,
+	fk_idGroupe integer,
+	primary key (idSuit)
+);
+
+CREATE TABLE Professeur(
+	idProf integer not null AUTO_INCREMENT,
+	password VARCHAR(40) not null,
+	nom VARCHAR(30) not null,
+	prenom VARCHAR(30) not null,
+	mail VARCHAR(40) not null,
+	sexe CHAR,
+	bureau VARCHAR(10) not null,
+	telephone VARCHAR(10) not null,
+	initiales VARCHAR(3) not null,
+	PRIMARY KEY (idProf)
+);
+
+CREATE TABLE Enseigne(
+	idEnseigne integer not null AUTO_INCREMENT,
+	fk_idProf integer,
+	fk_idCours integer,
+	primary key (idEnseigne)
+);
+
+CREATE TABLE ChargeDe(
+	idChargeDe integer not null AUTO_INCREMENT,
+	fk_idProf integer,
+	fk_idModule integer,
+	primary key (idChargeDe)
+	);
+
+CREATE TABLE Projet(
+	idProjet integer not null AUTO_INCREMENT,
+	intitulé VARCHAR(25) not null,
+	dateRendu DATE not null,
+	fk_idModule integer,
+	PRIMARY KEY (idProjet)
+);
+
+alter table Etudiant
+    add constraint FK_group_etu foreign key (fk_numgroupe) references Groupe(idGroupe);
+	
+alter table Cours
+    add constraint FK_mod_cours foreign key (fk_idModule) references Modules(idModule),
+    add constraint FK_salle_cours foreign key (fk_idSalle) references Salle(idSalle);
+	
+alter table Suit
+	add constraint FK_cour_suit foreign key (fk_idCours) references Cours(idCours),
+	add constraint FK_group_suit foreign key (fk_idGroupe) references Groupe(idGroupe);
+	
+alter table Enseigne
+	add constraint FK_prof_enseign foreign key (fk_idProf) references Professeur(idProf),
+	add constraint FK_cour_enseign foreign key (fk_idCours) references Cours(idCours);
+	
+alter table ChargeDe
+	add constraint FK_prof_charge foreign key (fk_idProf) references Professeur(idProf),
+	add constraint FK_module_charge foreign key (fk_idModule) references Modules(idModule);
+	
+alter table Projet
+	add constraint FK_module_projet foreign key (fk_idModule) references Modules(idModule);
