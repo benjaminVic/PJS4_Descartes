@@ -41,11 +41,6 @@ CREATE TABLE Groupe(
 
 CREATE TABLE Etudiant(
 	idEtu integer not null AUTO_INCREMENT,
-	password VARCHAR(40) not null,
-	nom VARCHAR(30) not null,
-	prenom VARCHAR(30) not null,
-	mail VARCHAR(40) not null,
-	sexe CHAR,
 	fk_numgroupe integer,
 	PRIMARY KEY (idEtu)
 );
@@ -67,11 +62,6 @@ CREATE TABLE Suit(
 
 CREATE TABLE Professeur(
 	idProf integer not null AUTO_INCREMENT,
-	password VARCHAR(40) not null,
-	nom VARCHAR(30) not null,
-	prenom VARCHAR(30) not null,
-	mail VARCHAR(40) not null,
-	sexe CHAR,
 	bureau VARCHAR(10) not null,
 	telephone VARCHAR(10) not null,
 	initiales VARCHAR(3) not null,
