@@ -1,0 +1,35 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.ENT_Mobile.MainActivity" >
+
+    <item
+        android:id="@+id/menu_compte"
+        android:icon="@drawable/maison"
+        android:title="Compte"
+        android:showAsAction="always"
+        />
+    <item
+        android:id="@+id/menu_edt"
+        android:icon="@drawable/emploi_du_temps"
+        android:showAsAction="always"
+        />
+    <item
+        android:id="@+id/menu_cahier"
+        android:icon="@drawable/cahier"
+        android:title="Cahier de texte"
+        android:showAsAction="always"
+        />
+    <item
+        android:id="@+id/menu_annuaire"
+        android:icon="@drawable/annuaire"
+        android:title="Annuaire"
+        android:showAsAction="always"
+  		/>
+    <item
+        android:id="@+id/menu_parametre"
+        android:icon="@drawable/parametre"
+        android:title="Parametre"
+        android:showAsAction="always"
+       />
+    
+</menu>
