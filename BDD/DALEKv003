@@ -9,6 +9,16 @@ DROP TABLE Enseigne CASCADE CONSTRAINT purge;
 DROP TABLE ChargeDe CASCADE CONSTRAINT purge;
 DROP TABLE Projet CASCADE CONSTRAINT purge;
 
+CREATE TABLE Personne(
+	idPers integer not null AUTO_INCREMENT,
+	nom varchar(30) not null,
+	prenom varchar(30) not null,
+	password varchar(50) not null,
+	mail varchar(50) not null,
+	sexe varchar(1) not null,
+	primary key (idPers)
+);
+
 CREATE TABLE Salle(
 	idSalle integer not null AUTO_INCREMENT,
 	numSalle varchar(5),
@@ -91,7 +101,9 @@ CREATE TABLE Projet(
 );
 
 alter table Etudiant
-    add constraint FK_group_etu foreign key (fk_numgroupe) references Groupe(idGroupe);
+    add constraint FK_group_etu foreign key (fk_numgroupe) references Groupe(idGroupe),
+	add constraint FK_person_etu foreign key (idEtu) references Personne (idPers),
+	add ine varchar(11) not null;
 	
 alter table Cours
     add constraint FK_mod_cours foreign key (fk_idModule) references Modules(idModule),
@@ -111,3 +123,6 @@ alter table ChargeDe
 	
 alter table Projet
 	add constraint FK_module_projet foreign key (fk_idModule) references Modules(idModule);
+
+alter table Professeur
+	add constraint FK_person_prof foreign key (idProf) references Personne(idPers);
