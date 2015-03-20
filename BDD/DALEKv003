@@ -29,7 +29,7 @@ CREATE TABLE Salle(
 CREATE TABLE Modules(
 	idModule integer not null AUTO_INCREMENT,
 	nomModule VARCHAR(10) not null,
-	couleur integer,
+	couleur VARCHAR(7),
 	PRIMARY KEY (idModule)
 );
 
