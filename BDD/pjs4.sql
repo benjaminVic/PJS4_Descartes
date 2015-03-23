@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Lun 23 Mars 2015 à 15:38
+-- Généré le :  Lun 23 Mars 2015 à 16:46
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -163,6 +163,7 @@ CREATE TABLE IF NOT EXISTS `personne` (
   `password` varchar(50) NOT NULL,
   `mail` varchar(50) NOT NULL,
   `sexe` varchar(1) NOT NULL,
+  `identifiant` varchar(30) NOT NULL,
   PRIMARY KEY (`idPers`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
@@ -170,9 +171,9 @@ CREATE TABLE IF NOT EXISTS `personne` (
 -- Contenu de la table `personne`
 --
 
-INSERT INTO `personne` (`idPers`, `nom`, `prenom`, `password`, `mail`, `sexe`) VALUES
-(1, 'bob', 'bob', 'bob', 'bob@gmail.com', 'H'),
-(2, 'tom', 'tom', 'tom', 'tom@hotmail.fr', 'F');
+INSERT INTO `personne` (`idPers`, `nom`, `prenom`, `password`, `mail`, `sexe`, `identifiant`) VALUES
+(1, 'bob', 'bob', 'bob', 'bob@gmail.com', 'H', 'boby'),
+(2, 'tom', 'tom', 'tom', 'tom@hotmail.fr', 'F', 'tomcat');
 
 -- --------------------------------------------------------
 
