@@ -315,6 +315,7 @@ ALTER TABLE `suit`
   ADD CONSTRAINT `FK_cour_suit` FOREIGN KEY (`fk_idCours`) REFERENCES `cours` (`idCours`),
   ADD CONSTRAINT `FK_group_suit` FOREIGN KEY (`fk_idGroupe`) REFERENCES `groupe` (`idGroupe`);
   
+ALTER TABLE `personne` ADD CONSTRAINT ck_personne_exclusion CHECK ((etudiant.idEtu IS NULL AND professeur.idProf IS NULL)
   OR (etudiant.idEtu IS NOT NULL AND professeur.idProf IS NULL) 
   OR (etudiant.idEtu IS NULL AND professeur.idProf IS NOT NULL)) 
 
