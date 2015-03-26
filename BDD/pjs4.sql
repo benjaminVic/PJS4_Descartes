@@ -76,7 +76,8 @@ CREATE TABLE IF NOT EXISTS `personne` (
   `mail` varchar(50) NOT NULL,
   `sexe` varchar(1) NOT NULL,
   `identifiant` varchar(30) NOT NULL,
-  PRIMARY KEY (`idPers`)
+  PRIMARY KEY (`idPers`),
+  UNIQUE (`identifiant`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 INSERT INTO `personne` (`idPers`, `nom`, `prenom`, `password`, `mail`, `sexe`, `identifiant`) VALUES
