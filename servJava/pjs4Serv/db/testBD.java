@@ -27,7 +27,7 @@ public class testBD {
 			System.out.println(date.getTime());
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			// TODO Auto-generated catch block	
 			e.printStackTrace();
 		}
 	}

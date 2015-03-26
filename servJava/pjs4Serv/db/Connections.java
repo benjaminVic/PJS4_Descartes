@@ -13,9 +13,13 @@ import javax.swing.JOptionPane;
 
 public class Connections implements Driver{
 
-	private static String url = "jdbc:mysql://127.0.0.1:3306/pjs4";
-	private static String user = "root";
-	private static String passwd = "";
+//	private static String url = "jdbc:mysql://127.0.0.1:3306/pjs4";
+//	private static String user = "root";
+//	private static String passwd = "";
+	
+	private static String url = "jdbc:mysql://82.236.82.4:3306/PJS_ENTMOBILE";
+	private static String user = "corentin";
+	private static String passwd = "projetjs";
 	
 	/**
 	 * Objet Connection
