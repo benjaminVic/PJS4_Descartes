@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Lun 23 Mars 2015 à 16:46
+-- Généré le :  Jeu 26 Mars 2015 à 09:41
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `cours` (
   `duree` int(11) NOT NULL,
   `fk_idModule` int(11) DEFAULT NULL,
   `fk_idSalle` int(11) DEFAULT NULL,
-  `dates` datetime DEFAULT NULL,
+  `dates` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`idCours`),
   KEY `FK_mod_cours` (`fk_idModule`),
   KEY `FK_salle_cours` (`fk_idSalle`)
@@ -64,9 +64,9 @@ CREATE TABLE IF NOT EXISTS `cours` (
 --
 
 INSERT INTO `cours` (`idCours`, `duree`, `fk_idModule`, `fk_idSalle`, `dates`) VALUES
-(1, 90, NULL, NULL, '2015-03-03 00:00:00'),
-(2, 95, 2, 4, '0000-00-00 00:00:00'),
-(3, 60, 2, 5, '2015-04-02 00:00:00');
+(1, 90, NULL, NULL, '2015-03-02 23:00:00'),
+(2, 95, 2, 4, '2015-04-01 11:37:18'),
+(3, 60, 2, 5, '2015-04-01 22:00:00');
 
 -- --------------------------------------------------------
 
@@ -314,10 +314,6 @@ ALTER TABLE `projet`
 ALTER TABLE `suit`
   ADD CONSTRAINT `FK_cour_suit` FOREIGN KEY (`fk_idCours`) REFERENCES `cours` (`idCours`),
   ADD CONSTRAINT `FK_group_suit` FOREIGN KEY (`fk_idGroupe`) REFERENCES `groupe` (`idGroupe`);
-  
-ALTER TABLE `personne` ADD CONSTRAINT ck_personne_simultaneite CHECK ((etudiant.idEtu IS NULL AND professeur.idProf IS NULL)
-  OR (etudiant.idEtu IS NOT NULL AND professeur.idProf IS NULL) 
-  OR (etudiant.idEtu IS NULL AND professeur.idProf IS NOT NULL)) 
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

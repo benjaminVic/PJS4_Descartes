@@ -48,6 +48,7 @@ CREATE TABLE Etudiant(
 CREATE TABLE Cours(
 	idCours integer not null AUTO_INCREMENT,
 	duree integer not null,
+	dates TIMESTAMP not null,
 	fk_idModule integer,
 	fk_idSalle integer,
 	PRIMARY KEY (idCours)
