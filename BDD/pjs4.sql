@@ -314,6 +314,9 @@ ALTER TABLE `projet`
 ALTER TABLE `suit`
   ADD CONSTRAINT `FK_cour_suit` FOREIGN KEY (`fk_idCours`) REFERENCES `cours` (`idCours`),
   ADD CONSTRAINT `FK_group_suit` FOREIGN KEY (`fk_idGroupe`) REFERENCES `groupe` (`idGroupe`);
+  
+  OR (etudiant.idEtu IS NOT NULL AND professeur.idProf IS NULL) 
+  OR (etudiant.idEtu IS NULL AND professeur.idProf IS NOT NULL)) 
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
