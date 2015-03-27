@@ -51,12 +51,32 @@ INSERT INTO `etudiant` (`idEtu`, `fk_numgroupe`, `ine`) VALUES
 
 CREATE TABLE IF NOT EXISTS `groupe` (
   `idGroupe` int(11) NOT NULL AUTO_INCREMENT,
-  `numGroupe` int(11) NOT NULL,
+  `numGroupe` VARCHAR(15) NOT NULL UNIQUE,
   PRIMARY KEY (`idGroupe`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 INSERT INTO `groupe` (`idGroupe`, `numGroupe`) VALUES
-(1, 201);
+(1, 201),
+(2, 202),
+(3, 203),
+(4, 204),
+(5, 205),
+(6, 206),
+(7, 207),
+(8, 208),
+(9, 101),
+(10, 102),
+(11, 103),
+(12, 104),
+(13, 105),
+(14, 106),
+(15, 107),
+(16, 108),
+(17, 109),
+(18, 110),
+(19, 111),
+(20, 112);
+
 
 CREATE TABLE IF NOT EXISTS `modules` (
   `idModule` int(11) NOT NULL AUTO_INCREMENT,
