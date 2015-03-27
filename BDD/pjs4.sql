@@ -137,6 +137,12 @@ CREATE TABLE IF NOT EXISTS `suit` (
 INSERT INTO `suit` (`idSuit`, `fk_idCours`, `fk_idGroupe`) VALUES
 (1, 3, 1);
 
+CREATE TABLE IF NOT EXISTS `Utilitaire` (
+	`lastMaj` TIMESTAMP NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+INSERT INTO utilitaire VAlUES(NOW());
+
 ALTER TABLE `chargede`
   ADD CONSTRAINT `FK_module_charge` FOREIGN KEY (`fk_idModule`) REFERENCES `modules` (`idModule`),
   ADD CONSTRAINT `FK_prof_charge` FOREIGN KEY (`fk_idProf`) REFERENCES `professeur` (`idProf`);
