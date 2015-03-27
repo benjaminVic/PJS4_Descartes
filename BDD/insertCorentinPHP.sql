@@ -18,4 +18,13 @@ SELECT idGroupe from groupe WHERE numGroupe = '%s';
 INSERT INTO cours(duree,fk_idModule,fk_idSalle,dates)
 VALUES('%s',%d,%d,'%s');
 
-INSERT INTO (,,)
+SELECT idcours 
+FROM cours
+ORDER BY idcours DESC
+LIMIT 1;
+
+INSERT INTO personne(nom,prenom,password,mail,sexe,identifiant)
+VALUES ('%s','%s','%s','%s','%s','%s');
+
+INSERT INTO professeur(idProf,burean,telephone,initiales)
+VALUES(%d,'%s','%s','%s');
