@@ -1,0 +1,90 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.ent_mobile.MainActivity"
+    tools:ignore="MergeRootFrame" >
+    
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:orientation="vertical" >
+		
+	       <TextView
+        android:id="@+id/msgentMobile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
+        android:text="ENT Mobile"
+        android:textSize="50dp"
+        android:layout_gravity="center_horizontal" />
+	       
+	       <TextView
+        android:id="@+id/msgBienvenue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/msgentMobile"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:text="Bienvenue"
+        android:textSize="30dp"
+         android:layout_gravity="center_horizontal" />
+
+    <DigitalClock
+        android:id="@+id/digitalClock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/msgentMobile"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="DigitalClock"
+        android:textSize="50dp"
+        android:layout_gravity="center_horizontal" />
+
+    		<LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="6"
+		    android:orientation="vertical" >
+		<View
+		    android:layout_width="match_parent"
+		    android:layout_height="1dp"
+		    android:background="@android:color/black"/>
+ 
+			<ScrollView
+			    android:id="@+id/scrollView1"
+			    android:layout_width="fill_parent"
+			    android:layout_height="fill_parent"
+			     >
+			     
+			    <LinearLayout
+		            android:layout_width="match_parent"
+		            android:layout_height="match_parent"
+		            android:orientation="vertical" >
+
+
+		   		<Button
+		        android:id="@+id/butDeconnexion"
+		        style="?android:attr/buttonStyleSmall"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignLeft="@+id/digitalClock"
+		        android:layout_alignRight="@+id/digitalClock"
+		        android:layout_below="@+id/digitalClock"
+		        android:layout_marginTop="32dp"
+		        android:text="Déconnexion"
+		        android:layout_gravity="center_horizontal"/>
+		   				        <requestFocus />
+			    </LinearLayout>
+			</ScrollView>
+
+		</LinearLayout>
+
+	</LinearLayout>
+		
+
+</RelativeLayout>
+
