@@ -1,0 +1,41 @@
+LinearLayout l = new LinearLayout(MainActivity.this);
+l.setOrientation(LinearLayout.HORIZONTAL);
+TextView heure = new TextView(MainActivity.this);
+Timestamp t = c.getDateHeure();
+
+Date date = new Date(t.getTime()*1000);
+SimpleDateFormat sdf = new SimpleDateFormat("hh:mm");
+sdf.setTimeZone(TimeZone.getTimeZone("GMT+1"));
+String h = sdf.format(date);
+
+heure.setText(h);
+heure.setTextSize(72);
+// la ligne du dessous sert à définir un "poids" pour la textview (y'a des lignes comme ça pour chaque textview,
+// les poids permettent d'aligner les éléments dans un LinearLayout (cf .xml), afin de garder un affichage plus
+// ou moins propre quand on va passer sur des plus grand écrans
+heure.setLayoutParams(new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0.8f));
+heure.setGravity(Gravity.CENTER_HORIZONTAL);
+
+// on remet les informations du côté dans un Linearlayout (pour pouvoir leur rajouter des poids, et les aligner comme je veux aussi)
+
+LinearLayout infos = new LinearLayout(MainActivity.this);
+infos.setLayoutParams(new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1.2f));
+infos.setOrientation(LinearLayout.VERTICAL);
+
+TextView crs = new TextView(MainActivity.this);
+crs.setTextSize(18);
+crs.setText(c.getNomCours());
+crs.setLayoutParams(new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1));
+infos.addView(crs);
+
+TextView salle = new TextView(MainActivity.this);
+salle.setTextSize(18);
+salle.setText(c.getSalle());
+salle.setLayoutParams(new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1));
+infos.addView(salle);
+
+TextView prof = new TextView(MainActivity.this);
+prof.setTextSize(18);
+prof.setText(c.getNomProf() + " - " + c.getGroupes());
+prof.setLayoutParams(new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1));
+infos.addView(prof);
